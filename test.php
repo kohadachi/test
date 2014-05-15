@@ -1,42 +1,41 @@
 <?php
 // php 5.4.4
 
-// 1s–Ú‚Ì“Ç‚Ýž‚Ý(ˆês–Ú‚Éƒpƒ‰ƒ[ƒ^N‚ÌŒÂ”, ƒ†[ƒU[‚Ìl”M, ƒgƒbƒvK)
+// 1è¡Œç›®ã®èª­ã¿è¾¼ã¿(ä¸€è¡Œç›®ã«ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿Nã®å€‹æ•°, ãƒ¦ãƒ¼ã‚¶ãƒ¼ã®äººæ•°M, ãƒˆãƒƒãƒ—K)
 $data_first_line = trim(fgets(STDIN));
 
-// ”z—ñ‚É‚·‚é
+// é…åˆ—ã«ã™ã‚‹
 $data_first_array = explode(' ',$data_first_line);
 
-// 2s–Ú‚Ì“Ç‚Ýž‚Ý(“_”’P”)
+// 2è¡Œç›®ã®èª­ã¿è¾¼ã¿(ç‚¹æ•°å˜æ•°)
 $data_sec_line = trim(fgets(STDIN));
-// ”z—ñ‚É‚·‚é
+// é…åˆ—ã«ã™ã‚‹
 $data_sec_array = explode(' ',$data_sec_line);
 
-// 3s–ÚˆÈ~‚ÌŽæ“¾
+// 3è¡Œç›®ä»¥é™ã®å–å¾—
 for($i = 0; $data_first_array[1] > $i; $i++){
     $data_n_line[$i] = trim(fgets(STDIN));
     
-    // ƒf[ƒ^‚ð”z—ñ‚É‚·‚é
+    // ãƒ‡ãƒ¼ã‚¿ã‚’é…åˆ—ã«ã™ã‚‹
     $data_n_array[$i] = explode(' ',$data_n_line[$i]);
     
-    // “¾“_‚ÌŒvŽZ
+    // å¾—ç‚¹ã®è¨ˆç®—
     $score_data[$i] = 0;
     for ($y = 0; $data_first_array[0] > $y; $y++){
         
         $score_data[$i] += $data_n_array[$i][$y] * $data_sec_array[$y];
         
-        // ¬”“_‚ÌŒvŽZ
+        // å°æ•°ç‚¹ã®è¨ˆç®—
         $score_data[$i] = round($score_data[$i],0);
         //$score_data[$i] = floor($score_data[$i]);
     }
     
 }
-// ‡ˆÊ‚Ã‚¯
+// é †ä½ã¥ã‘
 rsort($score_data);
 
-// o—Í
+// å‡ºåŠ›
 for ($x = 0; $data_first_array[2] > $x; $x++){
-    
     echo $score_data[$x];
     echo "\n";
 }
