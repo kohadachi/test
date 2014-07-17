@@ -1,6 +1,7 @@
 <?php
 // php 5.4.4
 
+// adachi追加
 // 1行目の読み込み(一行目にパラメータNの個数, ユーザーの人数M, トップK)
 $data_first_line = trim(fgets(STDIN));
 
